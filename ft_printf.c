@@ -21,7 +21,9 @@ int	ft_printf(const char *str, ...)
 			if(str[i] == 's')
 				ft_putstr((char *)va_arg(vl, char *));
 			if(str[i] == 'd' || str[i] == 'i')
-				ft_putnbr((int) va_arg(vl, int));
+				ft_putnbr(va_arg(vl, int));
+			if(str[i] == 'u')
+				ft_putunsignednbr(va_arg(vl, unsigned int));
 			if(str[i] == 'p' || str[i] == 'x' || str[i] == 'X')
 			{
 				if(str[i] == 'p')

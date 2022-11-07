@@ -11,5 +11,6 @@ void	ft_putstr(char *s);
 int		ft_strlen(char *s);
 void	ft_puthex(unsigned long long num, char c);
 void	ft_putnbr(int n);
+void	ft_putunsignednbr(unsigned int n);
 
 #endif
