@@ -5,12 +5,12 @@
 # include <stdio.h>
 # include <limits.h>
 
-int	ft_printf(const char *, ...);
-void ft_putchar(char c);
-void	ft_putstr(char *s);
+int		ft_printf(const char *, ...);
+void	ft_putchar(char c, int *printed);
+void	ft_putstr(char *s, int *printed);
 int		ft_strlen(char *s);
-void	ft_puthex(unsigned long long num, char c);
-void	ft_putnbr(int n);
-void	ft_putunsignednbr(unsigned int n);
+void	ft_puthex(unsigned long long num, char c, int *printed);
+void	ft_putnbr(int n, int *printed);
+void	ft_putunsignednbr(unsigned int n, int *printed);
 
 #endif

@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_putunsignednbr(unsigned int n)
+void	ft_putunsignednbr(unsigned int n, int *printed)
 {
 	char	c;
 
@@ -12,6 +12,7 @@ void	ft_putunsignednbr(unsigned int n)
 		n /= 10;
 	}
 	if (n != 0)
-		ft_putnbr(n);
+		ft_putunsignednbr(n, printed);
 	write(1, &c, 1);
+	*printed++;
 }
