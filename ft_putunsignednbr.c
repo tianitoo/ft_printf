@@ -14,5 +14,5 @@ void	ft_putunsignednbr(unsigned int n, int *printed)
 	if (n != 0)
 		ft_putunsignednbr(n, printed);
 	write(1, &c, 1);
-	*printed++;
+	(*printed)++;
 }
