@@ -20,6 +20,5 @@ void	ft_putnbr(int n, int *printed)
 	{
 		ft_putnbr(n, printed);
 	}
-	write(1, &c, 1);
-	(*printed)++;
+	ft_putchar(c, printed);
 }

@@ -39,7 +39,6 @@ int	ft_printf(const char *str, ...)
 		else
 		{
 			ft_putchar(str[i], &printed);
-			printed++;
 		}
 		i++;
 	}

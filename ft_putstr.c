@@ -2,6 +2,9 @@
 
 void	ft_putstr(char *s, int *printed)
 {
-	write(1, s, ft_strlen(s));
-	*printed = *printed + ft_strlen(s);
+	int i;
+
+	i = 0;
+	while(s[i++])
+		ft_putchar(s[i], printed);
 }
