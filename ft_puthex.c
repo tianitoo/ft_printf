@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:31:12 by hnait             #+#    #+#             */
-/*   Updated: 2022/11/13 15:31:13 by hnait            ###   ########.fr       */
+/*   Updated: 2022/11/13 17:20:35 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,17 @@ void	ft_puthex(size_t num, char c, int *printed)
 	}
 	else
 	{
-		if (num <= 9)
-			ft_putchar(num + '0', printed);
-		else
+		if (*printed != -1)
 		{
-			if (c == 'X')
-				ft_putchar(num - 10 + 'A', printed);
+			if (num <= 9)
+				ft_putchar(num + '0', printed);
 			else
-				ft_putchar(num - 10 + 'a', printed);
+			{
+				if (c == 'X')
+					ft_putchar(num - 10 + 'A', printed);
+				else
+					ft_putchar(num - 10 + 'a', printed);
+			}
 		}
 	}
 }

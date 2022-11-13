@@ -6,14 +6,14 @@
 #    By: hnait <hnait@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 11:50:23 by hnait             #+#    #+#              #
-#    Updated: 2022/11/12 11:52:55 by hnait            ###   ########.fr        #
+#    Updated: 2022/11/13 15:53:11 by hnait            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 CC = gcc
 FLAGS = -Wall -Werror -Wextra
-AR = ar -r
+AR = ar rc
 RM = rm -f
 HEAD = libftprintf.h
 
