@@ -1,14 +1,11 @@
 #include "ft_printf.h"
-
+#include "fcntl.h"
 int main()
 {
-	void *daDta;
-	void *data;
-	int i = ft_printf("| %d |\n", 4823);
-	int j =    printf("| %d |\n", 4823);
-	//         ft_printf("| %d |\n", 4823);
-	//            printf("| %d |\n", 4823);
-
-	printf("mine : %d\n", i);
-	printf("original : %d\n", j);
+	int q;
+	int	fd = open("tet.text",O_RDWR);
+	close(1);
+	q = printf("ok");
+	write(fd,&q,1);
+	//ft_printf("%r\n");
 }

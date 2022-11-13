@@ -1,24 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/13 15:31:16 by hnait             #+#    #+#             */
+/*   Updated: 2022/11/13 15:31:17 by hnait            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 	#include "ft_printf.h"
 
 void	ft_putnbr(int n, int *printed)
 {
 	char	c;
-	size_t	nbr;
+	long long	nbr;
 
-	nbr = n; 
-	if (n < 0)
+	nbr = n;
+	c = 0;
+	if (nbr < 0)
 	{
-		n = -n;
+		nbr = -nbr;
 		ft_putchar('-', printed);
 	}
-	if (n > 0)
+	if (nbr >= 0)
 	{
-		c = n % 10 + '0';
-		n /= 10;
+		if (nbr < 10)
+		{
+			c = nbr + '0';
+			ft_putchar(c, printed);
+		}
+		else
+		{
+			c = nbr % 10 + '0';
+			nbr /= 10;
+			ft_putnbr(nbr, printed);
+			ft_putchar(c, printed);
+		}
 	}
-	if (n != 0)
-	{
-		ft_putnbr(n, printed);
-	}
-	ft_putchar(c, printed);
 }

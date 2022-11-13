@@ -1,23 +1,25 @@
 #include "ft_printf.h"
 
-int typetest(va_list vl, char c, int *printed)
+void typetest(va_list vl, char c, int *printed)
 {
 	if(c == 'c')
 		ft_putchar(va_arg(vl, int), printed);
-	if(c == '%')
+	else if(c == '%')
 		ft_putchar('%', printed);
-	if(c == 's')
+	else if(c == 's')
 		ft_putstr((char *)va_arg(vl, char *), printed);
-	if(c == 'd' || c == 'i')
+	else if(c == 'd' || c == 'i')
 		ft_putnbr(va_arg(vl, int), printed);
-	if(c == 'u')
+	else if(c == 'u')
 		ft_putunsignednbr(va_arg(vl, unsigned int), printed);
-	if(c == 'p' || c == 'x' || c == 'X')
+	else if(c == 'p' || c == 'x' || c == 'X')
 	{
 		if(c == 'p')
 			ft_putstr("0x", printed);
-		ft_puthex(va_arg(vl, unsigned long long), c, printed);
+		ft_puthex(va_arg(vl, size_t), c, printed);
 	}
+	else
+		ft_putchar(c, printed);
 }
 
 int	ft_printf(const char *str, ...)
@@ -37,10 +39,8 @@ int	ft_printf(const char *str, ...)
 			typetest(vl, str[i], &printed);
 		}
 		else
-		{
 			ft_putchar(str[i], &printed);
-		}
-		i++;
+	i++;
 	}
 	va_end(vl);
 	return (printed);
